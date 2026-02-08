@@ -15,8 +15,7 @@
                     <span class="icon">+</span> New Chat
                 </button>
             </div>
-            <nav class="chat-history" id="chat-history-list">
-                </nav>
+            <nav class="chat-history" id="chat-history-list"></nav>
             <div class="sidebar-footer">
                 <button id="settings-btn" class="btn-ghost">Settings</button>
             </div>
@@ -33,51 +32,43 @@
                         <option value="custom">Custom Model...</option>
                     </select>
                 </div>
-                <div class="top-actions">
-                    <button id="system-prompt-toggle" class="btn-ghost">System Prompt</button>
-                </div>
+                <button id="system-prompt-toggle" class="btn-ghost">System</button>
             </header>
 
             <div id="chat-window" class="chat-window">
-                <div id="messages-container" class="messages-container">
-                    </div>
+                <div id="messages-container" class="messages-container"></div>
                 <div id="scroll-anchor"></div>
                 <button id="jump-to-bottom" class="btn-pill hidden">Jump to latest</button>
             </div>
 
             <footer class="composer-container">
                 <div class="input-wrapper">
-                    <textarea 
-                        id="chat-input" 
-                        placeholder="Message Claude..." 
-                        rows="1"
-                    ></textarea>
+                    <textarea id="chat-input" placeholder="Message Claude..." rows="1"></textarea>
                     <div class="controls">
                         <button id="stop-btn" class="btn-stop hidden">Stop</button>
                         <button id="send-btn" class="btn-send" disabled>
-                            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"></path></svg>
+                            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"></path></svg>
                         </button>
                     </div>
                 </div>
-                <p class="helper-text">OpenRouter • streaming active</p>
+                <p class="helper-text">OpenRouter • Streaming Active</p>
             </footer>
         </main>
 
         <div id="modal-overlay" class="modal-overlay hidden">
-            <div id="settings-modal" class="modal hidden">
+            <div id="settings-modal" class="modal">
                 <h2>Settings</h2>
                 <div class="form-group">
                     <label>OpenRouter API Key</label>
                     <input type="password" id="api-key-input" placeholder="sk-or-v1-...">
-                    <small class="warning-text">Stored locally in your browser. Not secure for shared computers.</small>
                 </div>
                 <div class="form-group">
                     <label>System Prompt</label>
-                    <textarea id="system-prompt-input" placeholder="You are a helpful assistant..."></textarea>
+                    <textarea id="system-prompt-input" rows="3"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Custom Model ID</label>
-                    <input type="text" id="custom-model-input" placeholder="e.g., meta-llama/llama-3-70b">
+                    <input type="text" id="custom-model-input" placeholder="e.g., google/gemini-pro-1.5">
                 </div>
                 <div class="modal-actions">
                     <button id="save-settings" class="btn-primary">Save Changes</button>
@@ -85,7 +76,6 @@
                 </div>
             </div>
         </div>
-
         <div id="toast-container"></div>
     </div>
     <script src="app.js"></script>
